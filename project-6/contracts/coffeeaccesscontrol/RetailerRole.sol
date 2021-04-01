@@ -5,6 +5,7 @@ import "./Roles.sol";
 
 // Define a contract 'RetailerRole' to manage this role - add, remove, check
 contract RetailerRole {
+  using Roles for Roles.Role;
 
   // Define 2 events, one for Adding, and other for Removing
   event RetailerAdded(address indexed account);
@@ -36,7 +37,7 @@ contract RetailerRole {
 
   // Define a function 'renounceRetailer' to renounce this role
   function renounceRetailer() public {
-    _removeFarmer (msg.sender);
+    _removeRetailer (msg.sender);
   }
 
   // Define an internal function '_addRetailer' to add this role, called by 'addRetailer'
