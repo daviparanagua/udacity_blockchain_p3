@@ -1,3 +1,11 @@
+# To reviewer
+
+Rinkeby Network
+TxID: 0x2dba02a26fa164128f08e8d1bd291cd05eaa29de1f0f966064454d148147a10d
+Contract: 0x0757c1c7f922ef7751c8155948200bc1576072f0
+
+
+
 # Supply chain & data auditing
 
 This repository containts an Ethereum DApp that demonstrates a Supply Chain flow between a Seller and Buyer. The user story is similar to any commonly used supply chain process. A Seller can add items to the inventory system stored in the blockchain. A Buyer can purchase such items from the inventory system. Additionally a Seller can mark an item as Shipped, and similarly a Buyer can mark an item as Received.
