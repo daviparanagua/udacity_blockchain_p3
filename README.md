@@ -4,6 +4,10 @@ Rinkeby Network
 TxID: 0x2dba02a26fa164128f08e8d1bd291cd05eaa29de1f0f966064454d148147a10d
 Contract: 0x0757c1c7f922ef7751c8155948200bc1576072f0
 
+Node v10.18.0
+Truffle v4.1.14 (core: 4.1.14)
+Solidity v0.4.24 (solc-js)
+
 
 
 # Supply chain & data auditing
