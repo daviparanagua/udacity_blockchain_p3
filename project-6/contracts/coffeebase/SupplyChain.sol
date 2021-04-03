@@ -67,6 +67,7 @@ contract SupplyChain is FarmerRole, RetailerRole, DistributorRole, ConsumerRole 
   event Shipped(uint upc);
   event Received(uint upc);
   event Purchased(uint upc);
+  event Logging(string message1, uint address1);
 
   // Define a modifer that checks to see if msg.sender == owner of the contract
   modifier onlyOwner() {
@@ -91,7 +92,7 @@ contract SupplyChain is FarmerRole, RetailerRole, DistributorRole, ConsumerRole 
     _;
     uint _price = items[_upc].productPrice;
     uint amountToReturn = msg.value - _price;
-    items[_upc].consumerID.transfer(amountToReturn);
+    items[_upc].distributorID.transfer(amountToReturn);
   }
 
   // Define a modifier that checks if an item.state of a upc is Harvested
@@ -165,7 +166,7 @@ contract SupplyChain is FarmerRole, RetailerRole, DistributorRole, ConsumerRole 
     items[_upc] = Item({
       sku: sku,
       upc: _upc,
-      ownerID: msg.sender,
+      ownerID: _originFarmerID,
       originFarmerID: _originFarmerID,
       originFarmName: _originFarmName,
       originFarmInformation: _originFarmInformation,
@@ -236,7 +237,7 @@ contract SupplyChain is FarmerRole, RetailerRole, DistributorRole, ConsumerRole 
     // Call modifer to check if buyer has paid enough
     paidEnough(items[_upc].productPrice)
     // Call modifer to send any excess ether back to buyer
-    checkValue(items[_upc].productPrice)
+    checkValue(_upc)
     {
     
     // Update the appropriate fields - ownerID, distributorID, itemState
