@@ -45,11 +45,11 @@ contract('SupplyChain', function(accounts) {
     it("Can set roles", async() => {
     const supplyChain = await SupplyChain.deployed()
 
-    supplyChain.addFarmer(originFarmerID, {from: ownerID})
-    supplyChain.addDistributor(distributorID, {from: ownerID})
-    supplyChain.addRetailer(retailerID, {from: ownerID})
-    supplyChain.addConsumer(consumerID, {from: ownerID})
-
+    await Promise.all([
+        supplyChain.addFarmer(originFarmerID, {from: ownerID}),
+        supplyChain.addDistributor(distributorID, {from: ownerID}),
+        supplyChain.addRetailer(retailerID, {from: ownerID}),
+        supplyChain.addConsumer(consumerID, {from: ownerID})])
     })
 
     // 1st Test
