@@ -26,7 +26,7 @@ The DApp User Interface when running is like:
 
 ![history](images/ftc_transaction_history.png)
 
-![rolegiver](images/rolegiver.png)
+![rolegiver](images/rolegiver.PNG)
 
 ## Getting Started
 
